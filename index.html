@@ -1,257 +1,650 @@
+<!-- ========================= -->
+<!-- FILE NAME: index.html -->
+<!-- ========================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CK-ERROR</title>
+<title>CK-ERROR 💀</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Orbitron',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#000;
-    overflow:hidden;
-    color:white;
+background:
+linear-gradient(180deg,#031525,#17002b,#000);
+color:white;
+overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:5px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#00e5ff;
+border-radius:20px;
+}
+
+/* BACKGROUND FLOATING */
 
 .bg{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-    radial-gradient(circle at top,#001a16 0%,#000 40%),
-    linear-gradient(to bottom,#000,#020202,#000);
-    z-index:-5;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
 }
 
-/* GRID */
-
-.grid{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-image:
-    linear-gradient(rgba(0,255,200,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,200,0.08) 1px, transparent 1px);
-    background-size:40px 40px;
-    animation:gridMove 15s linear infinite;
+.bg span{
+position:absolute;
+display:block;
+font-size:28px;
+animation:float 10s linear infinite;
+opacity:0.5;
 }
 
-@keyframes gridMove{
-    from{
-        transform:translateY(0);
-    }
+@keyframes float{
 
-    to{
-        transform:translateY(40px);
-    }
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
 }
 
-/* MAIN */
-
-.container{
-    width:100%;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-    padding:20px;
+50%{
+opacity:1;
 }
 
-/* NAME */
-
-.name{
-    font-size:150px;
-    font-weight:900;
-    color:#00ffd5;
-    text-shadow:
-    0 0 10px #00ffd5,
-    0 0 20px #00ffd5,
-    0 0 40px #00ffd5,
-    0 0 80px #00ffd5,
-    0 0 150px #00ffd5;
-    animation:glow 2s infinite alternate;
-    letter-spacing:10px;
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
 }
 
-@keyframes glow{
-
-    from{
-        text-shadow:
-        0 0 10px #00ffd5,
-        0 0 20px #00ffd5;
-    }
-
-    to{
-        text-shadow:
-        0 0 20px #00ffd5,
-        0 0 40px #00ffd5,
-        0 0 100px #00ffd5,
-        0 0 180px #00ffd5;
-    }
 }
 
-/* SUB */
+/* TOP STATS */
 
-.sub{
-    margin-top:25px;
-    font-size:40px;
-    color:#999;
-    letter-spacing:15px;
+.top{
+display:flex;
+gap:15px;
+padding:20px;
 }
 
-/* LINE */
-
-.line{
-    width:500px;
-    height:3px;
-    background:#00ffd5;
-    margin:40px auto;
-    box-shadow:
-    0 0 10px #00ffd5,
-    0 0 30px #00ffd5,
-    0 0 60px #00ffd5;
+.stat{
+flex:1;
+padding:18px;
+border-radius:25px;
+background:#050816;
+border:2px solid #00e5ff;
+box-shadow:0 0 30px #00e5ff55;
+font-size:22px;
+font-weight:700;
+text-align:center;
 }
 
-/* TEXT */
-
-.desc{
-    max-width:1000px;
-    font-size:22px;
-    color:#aaa;
-    line-height:45px;
-    margin-bottom:50px;
-    padding:0 20px;
+.react{
+border:2px solid #d400ff;
+box-shadow:0 0 30px #d400ff55;
 }
 
-/* BUTTONS */
+/* WEATHER */
 
-.buttons{
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-    justify-content:center;
+.weather{
+margin:20px;
+padding:30px;
+background:#050816;
+border-radius:35px;
+border:2px solid #8a2be2;
+box-shadow:0 0 50px #8a2be255;
+text-align:center;
 }
 
-.btn{
-    padding:20px 60px;
-    font-size:20px;
-    font-weight:bold;
-    border-radius:60px;
-    border:2px solid #00ffd5;
-    color:#00ffd5;
-    background:transparent;
-    text-decoration:none;
-    transition:0.5s;
-    box-shadow:
-    0 0 15px rgba(0,255,213,0.5);
+.weather h1{
+font-size:70px;
+color:#00e5ff;
+text-shadow:0 0 20px #00e5ff;
 }
 
-.btn:hover{
-    background:#00ffd5;
-    color:black;
-    transform:scale(1.08);
-    box-shadow:
-    0 0 20px #00ffd5,
-    0 0 50px #00ffd5,
-    0 0 100px #00ffd5;
+.weather p{
+font-size:28px;
+margin-top:10px;
+color:#ccc;
 }
 
-/* FOOTER */
+.clock{
+margin-top:30px;
+font-size:60px;
+font-weight:800;
+color:#66ffff;
+text-shadow:0 0 30px #00e5ff;
+}
 
-.footer{
-    position:absolute;
-    bottom:20px;
-    font-size:15px;
-    color:#555;
-    letter-spacing:5px;
+.date{
+margin-top:10px;
+font-size:24px;
+letter-spacing:5px;
+color:#d400ff;
+}
+
+/* PROFILE */
+
+.profile{
+padding:50px 20px;
+text-align:center;
+}
+
+.profile img{
+width:240px;
+height:240px;
+border-radius:50%;
+border:5px solid #00e5ff;
+box-shadow:
+0 0 30px #00e5ff,
+0 0 80px #00e5ff;
+object-fit:cover;
+}
+
+.profile h1{
+margin-top:25px;
+font-size:70px;
+font-weight:800;
+}
+
+.typing{
+margin-top:15px;
+font-size:35px;
+color:#00e5ff;
+height:50px;
+}
+
+/* MUSIC */
+
+.music{
+margin:20px;
+padding:30px;
+background:#050816;
+border-radius:35px;
+border:2px solid #d400ff;
+box-shadow:0 0 50px #d400ff55;
+}
+
+.music-top{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.music img{
+width:120px;
+height:120px;
+border-radius:20px;
+object-fit:cover;
+}
+
+.song{
+font-size:38px;
+font-weight:700;
+}
+
+.artist{
+margin-top:10px;
+font-size:24px;
+color:#d400ff;
+}
+
+.progress{
+margin-top:30px;
+height:8px;
+background:#111;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress span{
+display:block;
+height:100%;
+width:45%;
+background:#00e5ff;
+box-shadow:0 0 20px #00e5ff;
+}
+
+.controls{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:35px;
+}
+
+.controls button{
+width:95px;
+height:95px;
+border:none;
+border-radius:50%;
+font-size:35px;
+cursor:pointer;
+background:#00e5ff;
+box-shadow:0 0 40px #00e5ff;
+}
+
+/* TITLE */
+
+.title{
+font-size:60px;
+font-weight:800;
+padding:30px 20px;
+}
+
+/* CHANNEL CARD */
+
+.card{
+margin:20px;
+padding:25px;
+background:#050816;
+border-radius:35px;
+border:2px solid #00e5ff;
+box-shadow:0 0 40px #00e5ff33;
+}
+
+.card-top{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.card img{
+width:120px;
+height:120px;
+border-radius:20px;
+object-fit:cover;
+}
+
+.card h2{
+font-size:40px;
+}
+
+.card p{
+margin-top:10px;
+font-size:22px;
+color:#ccc;
+}
+
+.join{
+display:block;
+margin-top:30px;
+padding:20px;
+border-radius:20px;
+background:#00e5ff;
+text-align:center;
+font-size:28px;
+font-weight:700;
+text-decoration:none;
+color:black;
+box-shadow:0 0 40px #00e5ff;
+}
+
+/* COMMENTS */
+
+.comments{
+padding:20px;
+}
+
+.comment{
+padding:20px;
+margin-bottom:20px;
+background:#050816;
+border-radius:25px;
+border:2px solid #8a2be2;
+}
+
+.comment-top{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.comment img{
+width:70px;
+height:70px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.comment-name{
+font-size:28px;
+font-weight:700;
+}
+
+.comment-text{
+margin-top:15px;
+font-size:22px;
+color:#ddd;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+padding:18px 35px;
+background:#00e5ff;
+border-radius:50px;
+font-size:24px;
+font-weight:700;
+text-decoration:none;
+color:black;
+box-shadow:0 0 50px #00e5ff;
+z-index:999;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-    .name{
-        font-size:70px;
-    }
+.profile h1{
+font-size:50px;
+}
 
-    .sub{
-        font-size:20px;
-        letter-spacing:5px;
-    }
+.title{
+font-size:45px;
+}
 
-    .line{
-        width:250px;
-    }
+.song{
+font-size:28px;
+}
 
-    .desc{
-        font-size:16px;
-        line-height:30px;
-    }
+.controls button{
+width:80px;
+height:80px;
+font-size:30px;
+}
 
-    .btn{
-        padding:15px 35px;
-        font-size:15px;
-    }
+.clock{
+font-size:40px;
+}
+
+.weather h1{
+font-size:50px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="bg"></div>
-<div class="grid"></div>
+<!-- FLOATING ICONS -->
 
-<div class="container">
+<div class="bg">
 
-    <div class="name">
-        CK-ERROR
-    </div>
-
-    <div class="sub">
-        HACKER • CYBER • DARK WEB
-    </div>
-
-    <div class="line"></div>
-
-    <div class="desc">
-        Welcome To My Cyber World.<br>
-        Professional Dark Style Portfolio Website.<br>
-        Futuristic Hacker Interface With Neon Glow Effects.<br>
-        Built For Pure Dark Vibes 💀
-    </div>
-
-    <div class="buttons">
-
-        <a href="https://wa.me/919046579718" class="btn">
-            WHATSAPP
-        </a>
-
-        <a href="#" class="btn">
-            EXPLORE
-        </a>
-
-    </div>
+<span style="left:5%;animation-delay:0s;">💀</span>
+<span style="left:15%;animation-delay:2s;">🌸</span>
+<span style="left:35%;animation-delay:4s;">⚡</span>
+<span style="left:55%;animation-delay:1s;">🎵</span>
+<span style="left:75%;animation-delay:3s;">❤️</span>
+<span style="left:90%;animation-delay:5s;">✨</span>
 
 </div>
 
-<div class="footer">
-    © 2026 CK-ERROR | ALL RIGHTS RESERVED
+<!-- TOP -->
+
+<div class="top">
+
+<div class="stat">
+👁 Views: 999
 </div>
+
+<div class="stat react">
+❤️ React: 5000
+</div>
+
+</div>
+
+<!-- WEATHER -->
+
+<div class="weather">
+
+<h1>30°C</h1>
+
+<p>Kolkata, India</p>
+
+<p>Partly Cloudy 🌤️</p>
+
+<div class="clock" id="clock">
+00:00:00
+</div>
+
+<div class="date" id="date">
+Loading...
+</div>
+
+</div>
+
+<!-- PROFILE -->
+
+<div class="profile">
+
+<img src="https://files.catbox.moe/39u0xi.jpg">
+
+<h1>CK-ERROR</h1>
+
+<div class="typing" id="typing"></div>
+
+</div>
+
+<!-- MUSIC -->
+
+<div class="music">
+
+<div class="music-top">
+
+<img src="https://files.catbox.moe/39u0xi.jpg">
+
+<div>
+
+<div class="song">
+Cyber Hacker Mode 🔥
+</div>
+
+<div class="artist">
+🎧 CK-ERROR
+</div>
+
+</div>
+
+</div>
+
+<div class="progress">
+<span></span>
+</div>
+
+<div class="controls">
+
+<button>⏮</button>
+
+<button onclick="playMusic()">▶</button>
+
+<button>⏭</button>
+
+</div>
+
+<audio id="audio" src="https://files.catbox.moe/8tqwa4.mp3"></audio>
+
+</div>
+
+<!-- CHANNEL -->
+
+<div class="title">
+📢 Premium Channel
+</div>
+
+<div class="card">
+
+<div class="card-top">
+
+<img src="https://files.catbox.moe/39u0xi.jpg">
+
+<div>
+
+<h2>CK-ERROR Zone 💀</h2>
+
+<p>
+Welcome To My Cyber World ⚡
+</p>
+
+</div>
+
+</div>
+
+<a href="https://whatsapp.com/channel/0029Va67fwl5fM5XGeY8mm1E" class="join">
+Join WhatsApp Channel
+</a>
+
+</div>
+
+<!-- COMMENTS -->
+
+<div class="title">
+💬 Comments Section
+</div>
+
+<div class="comments">
+
+<div class="comment">
+
+<div class="comment-top">
+
+<img src="https://files.catbox.moe/39u0xi.jpg">
+
+<div class="comment-name">
+Dev
+</div>
+
+</div>
+
+<div class="comment-text">
+Awesome Website 💀🔥
+</div>
+
+</div>
+
+<div class="comment">
+
+<div class="comment-top">
+
+<img src="https://files.catbox.moe/39u0xi.jpg">
+
+<div class="comment-name">
+Raihan
+</div>
+
+</div>
+
+<div class="comment-text">
+Cyber Vibes 😈
+</div>
+
+</div>
+
+</div>
+
+<!-- WHATSAPP BUTTON -->
+
+<a href="https://wa.me/919046579718" class="whatsapp">
+WhatsApp
+</a>
+
+<script>
+
+/* CLOCK */
+
+function updateClock(){
+
+const now = new Date();
+
+document.getElementById("clock").innerHTML =
+now.toLocaleTimeString();
+
+document.getElementById("date").innerHTML =
+now.toDateString();
+
+}
+
+setInterval(updateClock,1000);
+
+/* TYPING EFFECT */
+
+const text = [
+
+"Hacker 💀",
+"Cyber Expert ⚡",
+"Dark Web Vibes 😈",
+"Programmer 🔥"
+
+];
+
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
+
+(function type(){
+
+if(count === text.length){
+count = 0;
+}
+
+currentText = text[count];
+
+letter = currentText.slice(0, ++index);
+
+document.getElementById('typing').textContent = letter;
+
+if(letter.length === currentText.length){
+
+count++;
+index = 0;
+
+setTimeout(type,1000);
+
+}else{
+
+setTimeout(type,120);
+
+}
+
+})();
+
+/* MUSIC */
+
+function playMusic(){
+
+let audio = document.getElementById("audio");
+
+audio.play();
+
+}
+
+</script>
 
 </body>
-      </html>
+</html>
