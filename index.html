@@ -1,7 +1,7 @@
-<!-- =============================== -->
-<!-- ULTRA PREMIUM CK-ERROR WEBSITE -->
-<!-- FILE NAME: index.html -->
-<!-- =============================== -->
+<!-- ========================================= -->
+<!--        CK-ERROR ULTRA PREMIUM SITE       -->
+<!--          FILE NAME: index.html           -->
+<!-- ========================================= -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -144,8 +144,8 @@ text-align:center;
 }
 
 .profile{
-width:220px;
-height:220px;
+width:230px;
+height:230px;
 border-radius:50%;
 border:5px solid #00e5ff;
 object-fit:cover;
@@ -185,7 +185,7 @@ color:#00e5ff;
 text-shadow:0 0 20px #00e5ff;
 }
 
-/* GLASS CARD */
+/* GLASS */
 
 .glass{
 margin:20px;
@@ -222,6 +222,40 @@ color:#00e5ff;
 .stat p{
 margin-top:10px;
 color:#aaa;
+}
+
+/* WEATHER */
+
+.weather-flex{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.weather-card{
+flex:1;
+min-width:250px;
+padding:25px;
+border-radius:25px;
+background:#090d18;
+border:2px solid #00e5ff33;
+}
+
+.weather-card h2{
+font-size:55px;
+color:#00e5ff;
+}
+
+.weather-card p{
+margin-top:10px;
+font-size:22px;
+color:#aaa;
+}
+
+.clock{
+font-size:45px;
+color:#d400ff;
+font-weight:700;
 }
 
 /* MUSIC */
@@ -290,7 +324,7 @@ transition:0.4s;
 transform:scale(1.1);
 }
 
-/* SECTION */
+/* TITLE */
 
 .title{
 font-size:55px;
@@ -345,6 +379,40 @@ transition:0.5s;
 
 .gallery img:hover{
 transform:scale(1.05);
+}
+
+/* COMMENTS */
+
+.comment{
+padding:20px;
+margin-top:20px;
+background:#090d18;
+border-radius:25px;
+border:1px solid #ffffff22;
+}
+
+.comment-top{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.comment img{
+width:70px;
+height:70px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.comment-name{
+font-size:25px;
+font-weight:700;
+}
+
+.comment-text{
+margin-top:15px;
+font-size:18px;
+color:#bbb;
 }
 
 /* FOOTER */
@@ -473,6 +541,48 @@ CK-ERROR
 
 </div>
 
+<!-- WEATHER -->
+
+<div class="glass">
+
+<div class="title">
+🌦️ Weather & Time
+</div>
+
+<div class="weather-flex">
+
+<div class="weather-card">
+
+<h2>
+30°C
+</h2>
+
+<p>
+Andhra Pradesh, India 🌤️
+</p>
+
+<p>
+Partly Cloudy
+</p>
+
+</div>
+
+<div class="weather-card">
+
+<div class="clock" id="clock">
+00:00:00
+</div>
+
+<p id="date">
+Loading...
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 <!-- MUSIC -->
 
 <div class="glass">
@@ -531,14 +641,21 @@ CK-ERROR ⚡
 
 <div>
 
-<h2>CK-ERROR Community 💀</h2>
+<h2>
+CK-ERROR Community 💀
+</h2>
 
-<p style="margin-top:15px;color:#aaa;font-size:20px;">
+<p style="
+margin-top:15px;
+color:#aaa;
+font-size:20px;
+">
 Join My Official Premium WhatsApp Channel
 For Cyber Updates ⚡
 </p>
 
-<a class="join" href="https://whatsapp.com/channel/0029Va67fwl5fM5XGeY8mm1E">
+<a class="join"
+href="https://whatsapp.com/channel/0029Va67fwl5fM5XGeY8mm1E">
 Join Channel
 </a>
 
@@ -566,19 +683,66 @@ Join Channel
 
 </div>
 
+<!-- COMMENTS -->
+
+<div class="glass">
+
+<div class="title">
+💬 Comments
+</div>
+
+<div class="comment">
+
+<div class="comment-top">
+
+<img src="https://files.catbox.moe/39u0xi.jpg">
+
+<div class="comment-name">
+Dev
+</div>
+
+</div>
+
+<div class="comment-text">
+Awesome Cyber Website 💀🔥
+</div>
+
+</div>
+
+<div class="comment">
+
+<div class="comment-top">
+
+<img src="https://files.catbox.moe/39u0xi.jpg">
+
+<div class="comment-name">
+Raihan
+</div>
+
+</div>
+
+<div class="comment-text">
+Ultra Premium Vibes 😈⚡
+</div>
+
+</div>
+
+</div>
+
 <footer>
 
 © 2026 CK-ERROR • ULTRA PREMIUM CYBER WEBSITE 💀
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919046579718">
+<a class="whatsapp"
+href="https://wa.me/919046579718">
 ⚡
 </a>
 
 <script>
 
-/* TYPING */
+/* TYPING EFFECT */
 
 const text = [
 
@@ -621,6 +785,22 @@ setTimeout(type,120);
 
 })();
 
+/* CLOCK */
+
+function updateClock(){
+
+const now = new Date();
+
+document.getElementById("clock").innerHTML =
+now.toLocaleTimeString();
+
+document.getElementById("date").innerHTML =
+now.toDateString();
+
+}
+
+setInterval(updateClock,1000);
+
 /* MUSIC */
 
 function playMusic(){
@@ -644,26 +824,37 @@ let particlesArray = [];
 class Particle{
 
 constructor(){
+
 this.x = Math.random() * canvas.width;
 this.y = Math.random() * canvas.height;
 this.size = Math.random() * 3 + 1;
 this.speedY = Math.random() * 1 + 0.5;
+
 }
 
 update(){
+
 this.y -= this.speedY;
 
 if(this.y < 0){
+
 this.y = canvas.height;
 this.x = Math.random() * canvas.width;
+
 }
+
 }
 
 draw(){
+
 ctx.fillStyle = "#00e5ff";
+
 ctx.beginPath();
+
 ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+
 ctx.fill();
+
 }
 
 }
