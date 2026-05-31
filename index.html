@@ -1,9 +1,11 @@
-<!-- ========================= -->
+<!-- =============================== -->
+<!-- ULTRA PREMIUM CK-ERROR WEBSITE -->
 <!-- FILE NAME: index.html -->
-<!-- ========================= -->
+<!-- =============================== -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -11,7 +13,7 @@
 
 <title>CK-ERROR 💀</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,15 +21,15 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
+font-family:'Poppins',sans-serif;
 background:
-linear-gradient(180deg,#031525,#17002b,#000);
-color:white;
+linear-gradient(180deg,#02030a,#090014,#000);
 overflow-x:hidden;
+color:white;
 }
 
 /* SCROLLBAR */
@@ -41,347 +43,367 @@ background:#00e5ff;
 border-radius:20px;
 }
 
-/* BACKGROUND FLOATING */
+/* PARTICLES */
 
-.bg{
+canvas{
 position:fixed;
 top:0;
 left:0;
-width:100%;
-height:100%;
-overflow:hidden;
+z-index:-2;
+}
+
+/* GLOW */
+
+.glow{
+position:fixed;
+width:600px;
+height:600px;
+background:#00e5ff33;
+filter:blur(120px);
+border-radius:50%;
+top:-200px;
+left:-100px;
 z-index:-1;
+animation:move 10s infinite alternate;
 }
 
-.bg span{
-position:absolute;
-display:block;
-font-size:28px;
-animation:float 10s linear infinite;
-opacity:0.5;
+.glow2{
+position:fixed;
+width:500px;
+height:500px;
+background:#d400ff22;
+filter:blur(120px);
+border-radius:50%;
+bottom:-150px;
+right:-100px;
+z-index:-1;
+animation:move2 12s infinite alternate;
 }
 
-@keyframes float{
-
-0%{
-transform:translateY(100vh) rotate(0deg);
-opacity:0;
+@keyframes move{
+from{
+transform:translate(0,0);
+}
+to{
+transform:translate(150px,100px);
+}
 }
 
-50%{
-opacity:1;
+@keyframes move2{
+from{
+transform:translate(0,0);
+}
+to{
+transform:translate(-120px,-80px);
+}
 }
 
-100%{
-transform:translateY(-120vh) rotate(360deg);
-opacity:0;
-}
+/* NAVBAR */
 
-}
-
-/* TOP STATS */
-
-.top{
+nav{
 display:flex;
-gap:15px;
-padding:20px;
+justify-content:space-between;
+align-items:center;
+padding:25px;
+position:sticky;
+top:0;
+backdrop-filter:blur(20px);
+background:#00000055;
+z-index:999;
 }
 
-.stat{
-flex:1;
-padding:18px;
-border-radius:25px;
-background:#050816;
-border:2px solid #00e5ff;
-box-shadow:0 0 30px #00e5ff55;
-font-size:22px;
-font-weight:700;
-text-align:center;
-}
-
-.react{
-border:2px solid #d400ff;
-box-shadow:0 0 30px #d400ff55;
-}
-
-/* WEATHER */
-
-.weather{
-margin:20px;
-padding:30px;
-background:#050816;
-border-radius:35px;
-border:2px solid #8a2be2;
-box-shadow:0 0 50px #8a2be255;
-text-align:center;
-}
-
-.weather h1{
-font-size:70px;
+.logo{
+font-size:35px;
+font-family:'Orbitron',sans-serif;
+font-weight:900;
 color:#00e5ff;
 text-shadow:0 0 20px #00e5ff;
 }
 
-.weather p{
-font-size:28px;
-margin-top:10px;
-color:#ccc;
+.nav-links{
+display:flex;
+gap:20px;
 }
 
-.clock{
-margin-top:30px;
-font-size:60px;
-font-weight:800;
-color:#66ffff;
-text-shadow:0 0 30px #00e5ff;
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:18px;
+transition:0.4s;
 }
 
-.date{
-margin-top:10px;
-font-size:24px;
-letter-spacing:5px;
-color:#d400ff;
+.nav-links a:hover{
+color:#00e5ff;
 }
 
-/* PROFILE */
+/* HERO */
 
-.profile{
-padding:50px 20px;
+.hero{
+padding:80px 20px;
 text-align:center;
 }
 
-.profile img{
-width:240px;
-height:240px;
+.profile{
+width:220px;
+height:220px;
 border-radius:50%;
 border:5px solid #00e5ff;
+object-fit:cover;
 box-shadow:
 0 0 30px #00e5ff,
 0 0 80px #00e5ff;
-object-fit:cover;
+animation:float 4s infinite ease-in-out;
 }
 
-.profile h1{
-margin-top:25px;
-font-size:70px;
-font-weight:800;
+@keyframes float{
+0%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-20px);
+}
+100%{
+transform:translateY(0);
+}
+}
+
+.hero h1{
+margin-top:30px;
+font-size:90px;
+font-family:'Orbitron',sans-serif;
+font-weight:900;
+background:linear-gradient(to right,#00e5ff,#d400ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .typing{
-margin-top:15px;
+margin-top:20px;
 font-size:35px;
-color:#00e5ff;
 height:50px;
+color:#00e5ff;
+text-shadow:0 0 20px #00e5ff;
+}
+
+/* GLASS CARD */
+
+.glass{
+margin:20px;
+padding:30px;
+border-radius:35px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 0 40px rgba(0,229,255,0.15);
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:30px;
+}
+
+.stat{
+padding:25px;
+border-radius:25px;
+background:#090d18;
+border:2px solid #00e5ff33;
+text-align:center;
+}
+
+.stat h2{
+font-size:40px;
+color:#00e5ff;
+}
+
+.stat p{
+margin-top:10px;
+color:#aaa;
 }
 
 /* MUSIC */
 
-.music{
-margin:20px;
-padding:30px;
-background:#050816;
-border-radius:35px;
-border:2px solid #d400ff;
-box-shadow:0 0 50px #d400ff55;
-}
-
 .music-top{
 display:flex;
-gap:20px;
 align-items:center;
+gap:20px;
 }
 
-.music img{
+.music-cover{
 width:120px;
 height:120px;
-border-radius:20px;
+border-radius:25px;
 object-fit:cover;
 }
 
 .song{
-font-size:38px;
+font-size:35px;
 font-weight:700;
 }
 
 .artist{
 margin-top:10px;
-font-size:24px;
+font-size:22px;
 color:#d400ff;
 }
 
 .progress{
 margin-top:30px;
-height:8px;
+height:10px;
 background:#111;
-border-radius:20px;
+border-radius:30px;
 overflow:hidden;
 }
 
 .progress span{
 display:block;
+width:55%;
 height:100%;
-width:45%;
-background:#00e5ff;
+background:linear-gradient(to right,#00e5ff,#d400ff);
 box-shadow:0 0 20px #00e5ff;
 }
 
 .controls{
 display:flex;
 justify-content:center;
-gap:40px;
+gap:35px;
 margin-top:35px;
 }
 
 .controls button{
-width:95px;
-height:95px;
+width:90px;
+height:90px;
 border:none;
 border-radius:50%;
-font-size:35px;
+font-size:32px;
 cursor:pointer;
-background:#00e5ff;
-box-shadow:0 0 40px #00e5ff;
+background:linear-gradient(to right,#00e5ff,#d400ff);
+color:white;
+box-shadow:0 0 30px #00e5ff;
+transition:0.4s;
 }
 
-/* TITLE */
+.controls button:hover{
+transform:scale(1.1);
+}
+
+/* SECTION */
 
 .title{
-font-size:60px;
+font-size:55px;
+font-family:'Orbitron',sans-serif;
 font-weight:800;
-padding:30px 20px;
+margin-bottom:25px;
 }
 
-/* CHANNEL CARD */
+/* CHANNEL */
 
-.card{
-margin:20px;
-padding:25px;
-background:#050816;
-border-radius:35px;
-border:2px solid #00e5ff;
-box-shadow:0 0 40px #00e5ff33;
-}
-
-.card-top{
+.channel{
 display:flex;
-gap:20px;
 align-items:center;
+gap:25px;
 }
 
-.card img{
+.channel img{
 width:120px;
 height:120px;
-border-radius:20px;
+border-radius:25px;
 object-fit:cover;
-}
-
-.card h2{
-font-size:40px;
-}
-
-.card p{
-margin-top:10px;
-font-size:22px;
-color:#ccc;
 }
 
 .join{
-display:block;
+display:inline-block;
 margin-top:30px;
-padding:20px;
+padding:18px 35px;
 border-radius:20px;
-background:#00e5ff;
-text-align:center;
-font-size:28px;
-font-weight:700;
+background:linear-gradient(to right,#00e5ff,#d400ff);
+color:white;
 text-decoration:none;
-color:black;
-box-shadow:0 0 40px #00e5ff;
-}
-
-/* COMMENTS */
-
-.comments{
-padding:20px;
-}
-
-.comment{
-padding:20px;
-margin-bottom:20px;
-background:#050816;
-border-radius:25px;
-border:2px solid #8a2be2;
-}
-
-.comment-top{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.comment img{
-width:70px;
-height:70px;
-border-radius:50%;
-object-fit:cover;
-}
-
-.comment-name{
-font-size:28px;
-font-weight:700;
-}
-
-.comment-text{
-margin-top:15px;
 font-size:22px;
-color:#ddd;
+font-weight:700;
+box-shadow:0 0 30px #00e5ff;
 }
 
-/* WHATSAPP FLOAT */
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:25px;
+transition:0.5s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+padding:50px 20px;
+text-align:center;
+color:#888;
+font-size:18px;
+}
+
+/* FLOAT BUTTON */
 
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
-padding:18px 35px;
-background:#00e5ff;
-border-radius:50px;
-font-size:24px;
-font-weight:700;
+width:80px;
+height:80px;
+border-radius:50%;
+background:linear-gradient(to right,#00e5ff,#d400ff);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:35px;
 text-decoration:none;
-color:black;
-box-shadow:0 0 50px #00e5ff;
+color:white;
+box-shadow:0 0 40px #00e5ff;
 z-index:999;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:768px){
 
-.profile h1{
-font-size:50px;
+.hero h1{
+font-size:55px;
+}
+
+.typing{
+font-size:25px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.channel{
+flex-direction:column;
+text-align:center;
+}
+
+.music-top{
+flex-direction:column;
+text-align:center;
 }
 
 .title{
-font-size:45px;
-}
-
-.song{
-font-size:28px;
-}
-
-.controls button{
-width:80px;
-height:80px;
-font-size:30px;
-}
-
-.clock{
 font-size:40px;
-}
-
-.weather h1{
-font-size:50px;
 }
 
 }
@@ -392,81 +414,85 @@ font-size:50px;
 
 <body>
 
-<!-- FLOATING ICONS -->
+<canvas id="canvas"></canvas>
 
-<div class="bg">
+<div class="glow"></div>
+<div class="glow2"></div>
 
-<span style="left:5%;animation-delay:0s;">💀</span>
-<span style="left:15%;animation-delay:2s;">🌸</span>
-<span style="left:35%;animation-delay:4s;">⚡</span>
-<span style="left:55%;animation-delay:1s;">🎵</span>
-<span style="left:75%;animation-delay:3s;">❤️</span>
-<span style="left:90%;animation-delay:5s;">✨</span>
+<!-- NAVBAR -->
 
+<nav>
+
+<div class="logo">
+CK-ERROR
 </div>
 
-<!-- TOP -->
-
-<div class="top">
-
-<div class="stat">
-👁 Views: 999
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Music</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
 </div>
 
-<div class="stat react">
-❤️ React: 5000
-</div>
+</nav>
 
-</div>
+<!-- HERO -->
 
-<!-- WEATHER -->
+<section class="hero">
 
-<div class="weather">
-
-<h1>30°C</h1>
-
-<p>Kolkata, India</p>
-
-<p>Partly Cloudy 🌤️</p>
-
-<div class="clock" id="clock">
-00:00:00
-</div>
-
-<div class="date" id="date">
-Loading...
-</div>
-
-</div>
-
-<!-- PROFILE -->
-
-<div class="profile">
-
-<img src="https://files.catbox.moe/39u0xi.jpg">
+<img class="profile" src="https://files.catbox.moe/39u0xi.jpg">
 
 <h1>CK-ERROR</h1>
 
 <div class="typing" id="typing"></div>
 
+</section>
+
+<!-- STATS -->
+
+<div class="glass">
+
+<div class="stats">
+
+<div class="stat">
+<h2>999K</h2>
+<p>Views 👁️</p>
+</div>
+
+<div class="stat">
+<h2>500K</h2>
+<p>Followers ❤️</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Cyber Vibes 💀</p>
+</div>
+
+</div>
+
 </div>
 
 <!-- MUSIC -->
 
-<div class="music">
+<div class="glass">
+
+<div class="title">
+🎵 Music Player
+</div>
 
 <div class="music-top">
 
-<img src="https://files.catbox.moe/39u0xi.jpg">
+<img class="music-cover" src="https://files.catbox.moe/39u0xi.jpg">
 
 <div>
 
 <div class="song">
-Cyber Hacker Mode 🔥
+Cyber Hacker Mode
 </div>
 
 <div class="artist">
-🎧 CK-ERROR
+CK-ERROR ⚡
 </div>
 
 </div>
@@ -487,118 +513,79 @@ Cyber Hacker Mode 🔥
 
 </div>
 
-<audio id="audio" src="https://files.catbox.moe/8tqwa4.mp3"></audio>
+<audio id="audio" src=""></audio>
 
 </div>
 
 <!-- CHANNEL -->
 
+<div class="glass">
+
 <div class="title">
-📢 Premium Channel
+📢 WhatsApp Channel
 </div>
 
-<div class="card">
-
-<div class="card-top">
+<div class="channel">
 
 <img src="https://files.catbox.moe/39u0xi.jpg">
 
 <div>
 
-<h2>CK-ERROR Zone 💀</h2>
+<h2>CK-ERROR Community 💀</h2>
 
-<p>
-Welcome To My Cyber World ⚡
+<p style="margin-top:15px;color:#aaa;font-size:20px;">
+Join My Official Premium WhatsApp Channel
+For Cyber Updates ⚡
 </p>
 
-</div>
-
-</div>
-
-<a href="https://whatsapp.com/channel/0029Va67fwl5fM5XGeY8mm1E" class="join">
-Join WhatsApp Channel
+<a class="join" href="https://whatsapp.com/channel/0029Va67fwl5fM5XGeY8mm1E">
+Join Channel
 </a>
 
 </div>
 
-<!-- COMMENTS -->
+</div>
+
+</div>
+
+<!-- GALLERY -->
+
+<div class="glass">
 
 <div class="title">
-💬 Comments Section
+🖼️ Gallery
 </div>
 
-<div class="comments">
-
-<div class="comment">
-
-<div class="comment-top">
+<div class="gallery">
 
 <img src="https://files.catbox.moe/39u0xi.jpg">
-
-<div class="comment-name">
-Dev
-</div>
-
-</div>
-
-<div class="comment-text">
-Awesome Website 💀🔥
-</div>
-
-</div>
-
-<div class="comment">
-
-<div class="comment-top">
-
+<img src="https://files.catbox.moe/39u0xi.jpg">
 <img src="https://files.catbox.moe/39u0xi.jpg">
 
-<div class="comment-name">
-Raihan
 </div>
 
 </div>
 
-<div class="comment-text">
-Cyber Vibes 😈
-</div>
+<footer>
 
-</div>
+© 2026 CK-ERROR • ULTRA PREMIUM CYBER WEBSITE 💀
 
-</div>
+</footer>
 
-<!-- WHATSAPP BUTTON -->
-
-<a href="https://wa.me/919046579718" class="whatsapp">
-WhatsApp
+<a class="whatsapp" href="https://wa.me/919046579718">
+⚡
 </a>
 
 <script>
 
-/* CLOCK */
-
-function updateClock(){
-
-const now = new Date();
-
-document.getElementById("clock").innerHTML =
-now.toLocaleTimeString();
-
-document.getElementById("date").innerHTML =
-now.toDateString();
-
-}
-
-setInterval(updateClock,1000);
-
-/* TYPING EFFECT */
+/* TYPING */
 
 const text = [
 
 "Hacker 💀",
 "Cyber Expert ⚡",
 "Dark Web Vibes 😈",
-"Programmer 🔥"
+"Premium Developer 🔥"
 
 ];
 
@@ -643,6 +630,72 @@ let audio = document.getElementById("audio");
 audio.play();
 
 }
+
+/* PARTICLES */
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+
+class Particle{
+
+constructor(){
+this.x = Math.random() * canvas.width;
+this.y = Math.random() * canvas.height;
+this.size = Math.random() * 3 + 1;
+this.speedY = Math.random() * 1 + 0.5;
+}
+
+update(){
+this.y -= this.speedY;
+
+if(this.y < 0){
+this.y = canvas.height;
+this.x = Math.random() * canvas.width;
+}
+}
+
+draw(){
+ctx.fillStyle = "#00e5ff";
+ctx.beginPath();
+ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+ctx.fill();
+}
+
+}
+
+function init(){
+
+for(let i=0;i<120;i++){
+
+particlesArray.push(new Particle());
+
+}
+
+}
+
+init();
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particlesArray.forEach(particle => {
+
+particle.update();
+particle.draw();
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
 
 </script>
 
